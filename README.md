@@ -68,11 +68,6 @@ The application will start on `http://localhost:8080`
 |--------|----------|-------------|
 | GET | `/api/employees` | Get all employees |
 | GET | `/api/employees/{id}` | Get employee by ID |
-| GET | `/api/employees/search/email?email={email}` | Get employee by email |
-| GET | `/api/employees/search/lastname?lastName={name}` | Search by last name |
-| GET | `/api/employees/search/jobtitle?jobTitle={title}` | Search by job title |
-| GET | `/api/employees/department/{departmentId}` | Get employees by department |
-| GET | `/api/employees/search/salary?min={min}&max={max}` | Search by salary range |
 | POST | `/api/employees` | Create new employee |
 | PUT | `/api/employees/{id}` | Update employee |
 | DELETE | `/api/employees/{id}` | Delete employee |
