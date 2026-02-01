@@ -57,7 +57,6 @@ The application will start on `http://localhost:8080`
 |--------|----------|-------------|
 | GET | `/api/departments` | Get all departments |
 | GET | `/api/departments/{id}` | Get department by ID |
-| GET | `/api/departments/search?name={name}` | Get department by name |
 | POST | `/api/departments` | Create new department |
 | PUT | `/api/departments/{id}` | Update department |
 | DELETE | `/api/departments/{id}` | Delete department |
@@ -87,7 +86,7 @@ Access the H2 database console at: `http://localhost:8080/h2-console`
 ```bash
 curl -X POST http://localhost:8080/api/departments \
   -H "Content-Type: application/json" \
-  -d '{"name":"IT Support","description":"Technical support team","location":"Building C"}'
+  -d '{"departmentName":"IT Support","location":"Building C"}'
 ```
 
 ### Create an Employee
@@ -95,14 +94,10 @@ curl -X POST http://localhost:8080/api/departments \
 curl -X POST http://localhost:8080/api/employees \
   -H "Content-Type: application/json" \
   -d '{
-    "firstName":"Alice",
-    "lastName":"Wonder",
+    "Name":"Alice",
     "email":"alice.wonder@company.com",
-    "phoneNumber":"555-9999",
-    "jobTitle":"System Administrator",
     "salary":70000,
-    "hireDate":"2024-01-15",
-    "departmentId":1
+    "department":"IT"
   }'
 ```
 
@@ -116,10 +111,9 @@ curl http://localhost:8080/api/employees
 curl -X PUT http://localhost:8080/api/employees/1 \
   -H "Content-Type: application/json" \
   -d '{
-    "firstName":"John",
-    "lastName":"Smith",
+    "Name":"John",
     "email":"john.smith@company.com",
-    "jobTitle":"Principal Engineer",
+    "department":"HR",
     "salary":110000
   }'
 ```
